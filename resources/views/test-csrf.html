@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head><title>CSRF Test</title></head>
+<body>
+    <h1>CSRF Attack Test</h1>
+    <form action="http://localhost:8000/tickets/1/comments" method="POST">
+        <input name="content" value="Spam from external site">
+        <button type="submit">Submit tanpa CSRF Token</button>
+    </form>
+</body>
+</html>

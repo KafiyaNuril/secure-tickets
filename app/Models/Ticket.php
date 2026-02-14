@@ -29,7 +29,10 @@ class Ticket extends Model
         'priority' => 'medium',
     ];
 
-
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 
     public function user(): BelongsTo
     {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +21,7 @@
             --primary-dark: #4338ca;
             --bg-dark: #0f172a;
             --text-muted: #94a3b8;
-            --border-subtle: rgba(255,255,255,.15);
+            --border-subtle: rgba(255, 255, 255, .15);
         }
 
         body {
@@ -33,8 +34,8 @@
             display: flex;
             align-items: center;
             background:
-                radial-gradient(circle at top right, rgba(79,70,229,.25), transparent 50%),
-                radial-gradient(circle at bottom left, rgba(56,189,248,.15), transparent 50%),
+                radial-gradient(circle at top right, rgba(79, 70, 229, .25), transparent 50%),
+                radial-gradient(circle at bottom left, rgba(56, 189, 248, .15), transparent 50%),
                 var(--bg-dark);
             color: #fff;
         }
@@ -71,36 +72,42 @@
         }
     </style>
 </head>
+
 <body>
 
-<section class="hero-section">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <h1 class="hero-title">
-                    Sistem Ticketing untuk Laporan & Permintaan Fitur
-                </h1>
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="hero-title">
+                        Sistem Ticketing untuk Laporan & Permintaan Fitur
+                    </h1>
 
-                <p class="hero-subtitle">
-                    Kelola laporan bug, permintaan fitur, dan kendala sistem secara terstruktur
-                    melalui platform ticketing yang aman, cepat, dan mudah digunakan.
-                </p>
+                    <p class="hero-subtitle">
+                        Kelola laporan bug, permintaan fitur, dan kendala sistem secara terstruktur
+                        melalui platform ticketing yang aman, cepat, dan mudah digunakan.
+                    </p>
 
-                <div class="hero-cta">
-                    <a href="{{ route('tickets.index') }}" class="btn btn-primary-custom me-3 mb-3">
-                        <i class="bi bi-shield-lock me-1"></i> Lihat Tiket
-                    </a>
+                    <div class="hero-cta">
+                        <a href="{{ route('tickets.index') }}" class="btn btn-primary-custom me-3">
+                            <i class="bi bi-shield-lock me-1"></i> Lihat Tiket
+                        </a>
 
-                    <a href="{{ route('tickets.create') }}"
-                       class="btn btn-outline-light mb-3"
-                       style="border-color: var(--border-subtle);">
-                        Buat Tiket Baru
-                    </a>
+                        <a href="{{ route('tickets.create') }}" class="btn btn-outline-light me-3"
+                            style="border-color: var(--border-subtle);">
+                            Buat Tiket Baru
+                        </a>
+
+                        <a href="{{ route('demo-blade.index') }}" class="btn btn-outline-light"
+                            style="border-color: var(--border-subtle);">
+                            Demo Blade
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 </body>
+
 </html>
