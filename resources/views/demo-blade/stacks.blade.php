@@ -18,22 +18,22 @@
         border-radius: 10px;
         transition: all 0.3s ease;
     }
-    
+
     .demo-box:hover {
         transform: scale(1.02);
     }
-    
+
     .gradient-box {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
     }
-    
+
     .animated-border {
         border: 3px solid transparent;
         background: linear-gradient(white, white) padding-box,
                     linear-gradient(45deg, #f093fb, #f5576c) border-box;
     }
-    
+
     .custom-highlight {
         background-color: #fff3cd;
         border-left: 4px solid #ffc107;
@@ -66,10 +66,10 @@
                 </div>
                 <div class="card-body">
                     <p>
-                        <code>@@stack</code> dan <code>@@push</code> memungkinkan kita menambahkan 
+                        <code>@@stack</code> dan <code>@@push</code> memungkinkan kita menambahkan
                         CSS atau JavaScript khusus per halaman, tanpa mengubah layout utama.
                     </p>
-                    
+
                     <h6>Di Layout (app.blade.php):</h6>
                     <pre class="bg-light p-3 rounded"><code>&lt;head&gt;
     ...
@@ -79,7 +79,7 @@
     ...
     @@stack('scripts') {{-- Stack untuk JS --}}
 &lt;/body&gt;</code></pre>
-                    
+
                     <h6 class="mt-3">Di Child View:</h6>
                     <pre class="bg-light p-3 rounded"><code>@@push('styles')
 &lt;style&gt;
@@ -109,17 +109,17 @@
                         CSS di bawah ini ditambahkan via <code>@@push('styles')</code>
                         dan hanya berlaku di halaman ini.
                     </p>
-                    
+
                     <div class="demo-box gradient-box mb-3">
                         <h6>Gradient Box</h6>
                         <p class="mb-0">Hover untuk efek scale</p>
                     </div>
-                    
+
                     <div class="demo-box animated-border mb-3">
                         <h6>Animated Border</h6>
                         <p class="mb-0">Border dengan gradient</p>
                     </div>
-                    
+
                     <div class="custom-highlight">
                         <h6>Custom Highlight</h6>
                         <p class="mb-0">Styling khusus untuk callout</p>
@@ -177,15 +177,15 @@
         </div>
         <div class="card-body">
             <p>Klik tombol di bawah untuk melihat JavaScript yang ditambahkan via @@push:</p>
-            
+
             <button id="demoButton" class="btn btn-primary me-2">
                 <i class="bi bi-hand-index"></i> Klik Saya
             </button>
-            
+
             <button id="counterButton" class="btn btn-success">
                 <i class="bi bi-plus-circle"></i> Counter: <span id="counter">0</span>
             </button>
-            
+
             <div id="demoOutput" class="mt-3 p-3 bg-light rounded d-none">
                 <i class="bi bi-check-circle text-success"></i>
                 JavaScript dari @push('scripts') berjalan!
@@ -217,19 +217,19 @@
         // Demo button
         const demoButton = document.getElementById('demoButton');
         const demoOutput = document.getElementById('demoOutput');
-        
+
         demoButton.addEventListener('click', function() {
             demoOutput.classList.remove('d-none');
             demoButton.textContent = 'Berhasil!';
             demoButton.classList.remove('btn-primary');
             demoButton.classList.add('btn-success');
         });
-        
+
         // Counter button
         const counterButton = document.getElementById('counterButton');
         const counter = document.getElementById('counter');
         let count = 0;
-        
+
         counterButton.addEventListener('click', function() {
             count++;
             counter.textContent = count;

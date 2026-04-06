@@ -13,11 +13,19 @@ return new class extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
+
+            // Foreign key ke users - owner ticket
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+
+            // Foreign key ke users - staff yang di-assign (nullable)
+            $table->foreignId('assigned_to')->nullable()->constrained('users')->onDelete('set null');
+
             $table->string('title');
             $table->text('description');
-            $table->enum('status', ['open', 'in_progress', 'closed'])->default('open');
             $table->enum('priority', ['low', 'medium', 'high'])->default('medium');
+            $table->enum('status', ['open', 'in_progress', 'resolved', 'closed'])->default('open');
+            $table->string('category')->nullable();  // Category for ticket organization
+
             $table->timestamps();
         });
     }
