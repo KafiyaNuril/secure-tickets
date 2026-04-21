@@ -1,21 +1,22 @@
 includes:
     - ./vendor/larastan/larastan/extension.neon
+    # - phpstan-baseline.neon # Tambahkan setelah generate baseline
 
 parameters:
-    #Folder yang dianalisis
+    # Folder yang dianalisis
     paths:
         - app/
         - config/
         - database/
         - routes/
 
-    #Level analisis (o-9, semakin tinggi semakin strict)
+    # Level analisis (0-9, semakin tinggi semakin strict)
     level: 5
 
-    #Folder yang dikecualikan
+    # Folder yang dikecualikan
     excludePaths:
-        - app/Console/kernel.php (?)
+        - app/Console/Kernel.php (?)
 
-    #Error yang diabaikan (gunakan dengan hati-hati!)
+    # Error yang diabaikan (gunakan dengan hati-hati!)
     ignoreErrors:
-    # - '#some error pattern#'
+        # - '#some error pattern#'
